@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  db-volume:
+services:
+  db:
+    image: "mysql:latest" # dernière version de mysql
+    command: --default-authentication-plugin=mysql_native_password # config
+    restart: always # dit à docker de redémarrer le service dès que possible s'il s'arrête
+    ports:
+      - 3307:3306 # mappe le port local 3307 avec le port 3306 du container
+    environment:
+      MYSQL_ROOT_PASSWORD: root # mot de passe de l'utilisateur root de MySQL
+    volumes:
+      - db-volume:/var/lib/mysql # comme ça même si le container est détruit, les données restent stockées en local :)
+      - "./dumps:/home/dumps"
