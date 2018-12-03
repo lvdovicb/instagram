@@ -4,7 +4,13 @@
   "description": "instagram mockup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js", 
+    "run mysql-start": "sudo docker-compose up",
+    "run mysql-stop": "sudo docker-compose down",
+    "run mysql-connect": "sudo docker-compose exec db mysql -u root -p",
+    "run bash": "sudo docker-compose exec db bash"
+
   },
   "repository": {
     "type": "git",
