@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js", 
+    "start": "nodemon index.js",
     "mysql-start": "sudo docker-compose up",
     "mysql-stop": "sudo docker-compose down",
-    "mysql-connect": "sudo docker-compose exec db mysql -u root -p",
+    "mysql-connect": "sudo docker-compose exec db mysql -u admin2 -p",
     "bash": "sudo docker-compose exec db bash"
   },
   "repository": {
@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/lvdovicb/instagram#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
   }
 }
