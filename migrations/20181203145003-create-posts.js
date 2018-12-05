@@ -6,21 +6,27 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      PostId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER, 
+        unique: true
       },
       title: {
+         allowNull: false,
         type: Sequelize.STRING
       },
       image: {
+         allowNull: false,
         type: Sequelize.STRING
       },
       comment: {
+         allowNull: false,
         type: Sequelize.STRING
       },
-      UserId: {
+      userId: {
+          references: {
+          model: "Users",
+          key: "id"
+        },
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

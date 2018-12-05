@@ -9,7 +9,12 @@
     "mysql-start": "sudo docker-compose up",
     "mysql-stop": "sudo docker-compose down",
     "mysql-connect": "sudo docker-compose exec db mysql -u admin2 -p",
-    "bash": "sudo docker-compose exec db bash"
+    "bash": "sudo docker-compose exec db bash",
+    "migrate": "sequelize db:migrate",
+    "undo-migration": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all",
+    "unseed": "sequelize db:seed:undo:all",
+    "backup":"sudo docker-compose exec db bash  -c 'mysqldump --user admin2 -p instagram_development > /home/dumps/backup.$(date +%Y%m%d_%H%M%S).sql'"
   },
   "repository": {
     "type": "git",
@@ -22,8 +27,10 @@
   },
   "homepage": "https://github.com/lvdovicb/instagram#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "express": "^4.16.4",
     "mysql2": "^1.6.4",
+    "random-sentence": "^1.0.4",
     "sequelize": "^4.41.2"
   }
 }
