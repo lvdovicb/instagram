@@ -14,7 +14,8 @@
     "undo-migration": "sequelize db:migrate:undo:all",
     "seed": "sequelize db:seed:all",
     "unseed": "sequelize db:seed:undo:all",
-    "backup":"sudo docker-compose exec db bash  -c 'mysqldump --user admin2 -p instagram_development > /home/dumps/backup.$(date +%Y%m%d_%H%M%S).sql'"
+    "backup": "sudo docker-compose exec db bash  -c 'mysqldump --user admin2 -p instagram_development > /home/dumps/backup.$(date +%Y%m%d_%H%M%S).sql'",
+    "doc": "documentation build index.js -f html -o docs"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,10 @@
   "homepage": "https://github.com/lvdovicb/instagram#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
     "mysql2": "^1.6.4",
     "random-sentence": "^1.0.4",
     "sequelize": "^4.41.2"
