@@ -38,7 +38,7 @@ class PostsController {
 
     var id = req.params.id
 
-    models.Posts.findById(id)
+    models.Posts.findByPk(id)
       .then(post => {
         res.send(post)
       })

@@ -33,7 +33,7 @@ class UsersController {
 
     var id = req.params.id
 
-    models.Users.findById(id)
+    models.Users.findByPk(id)
     .then(user => {
       res.send(user)
     })
